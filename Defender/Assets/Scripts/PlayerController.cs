@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class is used as a controller to move the rigidbody2D
 public class PlayerController : MonoBehaviour
 {
     // the current speed of the character

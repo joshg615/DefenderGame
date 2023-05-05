@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1957167461149040760}
   - component: {fileID: 992133716802291945}
   - component: {fileID: 4229391342994674971}
+  - component: {fileID: 1970196794271656507}
   - component: {fileID: 4175467235358263880}
+  - component: {fileID: 2574552833885766174}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &992133716802291945
 SpriteRenderer:
@@ -113,6 +115,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1970196794271656507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78d6479d5f8b1140a9a9c9b0df73384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4175467235358263880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +145,25 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   currentMovement: {x: 0, y: 0, z: 0}
   currentDirection: {x: 0, y: 0, z: 0}
+  addedForce: {x: 0, y: 0, z: 0}
+--- !u!114 &2574552833885766174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3f30ebcfae5544f9e43efa829683c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPermitted: 1
+  abilityName: Movement
+  inputAuthorized: 1
+  analogInput: 1
+  walkSpeed: 5
+  idleThreshold: 0.05
+  acceleration: 0
+  deceleration: 0
+  interpolateMovementSpeed: 0

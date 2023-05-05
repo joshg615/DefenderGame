@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class displays buttons on the screen to test public functions
 public class DebuggingButtons : MonoBehaviour
 {
     // The player controller we want to add force to
