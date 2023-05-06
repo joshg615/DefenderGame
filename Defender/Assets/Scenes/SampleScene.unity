@@ -652,6 +652,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4777144588788166247, guid: 9f8804a6081765e448012fbb0a565478, type: 3}
+      propertyPath: m_XDamping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777144588788166247, guid: 9f8804a6081765e448012fbb0a565478, type: 3}
+      propertyPath: m_YDamping
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8128426308187671832, guid: 9f8804a6081765e448012fbb0a565478, type: 3}
       propertyPath: m_Name
       value: Camera Rig
