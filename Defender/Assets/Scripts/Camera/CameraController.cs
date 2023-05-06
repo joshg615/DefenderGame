@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+// This class handles camera follow for Cinemachine powered cameras
 public class CameraController : MonoBehaviour
 {
     // True if the camera should follow the player

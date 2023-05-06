@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 1748695954}
   - component: {fileID: 1748695953}
   m_Layer: 0
-  m_Name: Debugging
+  m_Name: Debug GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
