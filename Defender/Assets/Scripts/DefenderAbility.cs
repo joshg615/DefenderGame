@@ -7,7 +7,21 @@ public class DefenderAbility : PlayerAbility
 {
     public float repelForce = 500f; // force applied to repelled objects
     public float repelRadius = 5f; // radius of the repel effect
+    public GameObject shieldObject;
+    private CircleCollider2D _shieldCollider; // the collider component of the shield object
 
+
+    // override the Initialize method to get the renderer and collider components of the shield object
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        if (shieldObject != null)
+        {
+            //_shieldRenderer = shieldObject.GetComponent<Renderer>();
+            _shieldCollider = shieldObject.GetComponent<CircleCollider2D>();
+        }
+    }
     // override the HandleInput method to listen for input to activate the ability
     protected override void HandleInput()
     {
@@ -20,8 +34,15 @@ public class DefenderAbility : PlayerAbility
     // a method to activate the ability
     protected virtual void ActivateAbility()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, repelRadius);
+        
+        // turn on the shield object
+        if (shieldObject != null)
+        {
+            //_shieldRenderer.enabled = true;
+            _shieldCollider.enabled = true;
+        }
 
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _shieldCollider.radius);
         foreach (Collider2D hitCollider in hitColliders)
         {
             Rigidbody2D hitRigidbody = hitCollider.GetComponent<Rigidbody2D>();
@@ -32,13 +53,29 @@ public class DefenderAbility : PlayerAbility
                 hitRigidbody.AddForce(repelDirection * repelForce);
             }
         }
+
+        Invoke("ResetAbility", 3f);
+
+    }
+
+    // override the ResetAbility method to turn off the shield object when the ability is reset
+    public override void ResetAbility()
+    {
+        base.ResetAbility();
+
+        // turn off the shield object
+        if (shieldObject != null)
+        {
+            //_shieldRenderer.enabled = false;
+            _shieldCollider.enabled = false;
+        }
     }
 
     // visualize the repel radius in the editor
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, repelRadius);
-    }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, repelRadius);
+    //}
 }
 
