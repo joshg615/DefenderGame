@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 4175467235358263880}
   - component: {fileID: 2574552833885766174}
   - component: {fileID: 93856084065908376}
+  - component: {fileID: 8700078225546440744}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -266,3 +267,21 @@ MonoBehaviour:
   repelForce: 500
   repelRadius: 5
   shieldObject: {fileID: 1068593787441139882}
+--- !u!114 &8700078225546440744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb83b87d1b87e204bb92dac76f1605b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPermitted: 1
+  abilityName: 
+  wallSize: 4
+  wallHeight: 1
+  smashForce: 10
+  cooldownTime: 2
