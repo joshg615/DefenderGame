@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2169137626206399043}
   - component: {fileID: 8680411838901409005}
+  - component: {fileID: 2887478168036757116}
   - component: {fileID: 2455707104787997278}
   m_Layer: 0
   m_Name: Slime
@@ -85,6 +86,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &2887478168036757116
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253115784579975442}
+  m_Enabled: 1
+  m_SortingLayerID: 1144616535
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!114 &2455707104787997278
 MonoBehaviour:
   m_ObjectHideFlags: 0
