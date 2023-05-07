@@ -39,6 +39,7 @@ public class DefenderAbility : PlayerAbility
         if (shieldObject != null)
         {
             //_shieldRenderer.enabled = true;
+            shieldObject.SetActive(true);
             _shieldCollider.enabled = true;
         }
 
@@ -68,6 +69,7 @@ public class DefenderAbility : PlayerAbility
         {
             //_shieldRenderer.enabled = false;
             _shieldCollider.enabled = false;
+            shieldObject.SetActive(false);
         }
     }
 
