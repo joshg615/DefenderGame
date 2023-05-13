@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8680411838901409005}
   - component: {fileID: 2887478168036757116}
   - component: {fileID: 2455707104787997278}
+  - component: {fileID: 1061991838522330772}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd9e276dc5fe551478a1b1ce9febf2ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,5 +111,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26dfd41408d9f942b0eb543b9d76825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  targets: []
   speed: 5
+  minDistance: 0.5
+  idleTime: 1
+--- !u!95 &1061991838522330772
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253115784579975442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28f1c8aa868480d4782e42b7f96e3c79, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

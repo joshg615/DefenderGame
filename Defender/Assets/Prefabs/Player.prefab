@@ -162,6 +162,8 @@ GameObject:
   - component: {fileID: 2574552833885766174}
   - component: {fileID: 93856084065908376}
   - component: {fileID: 8700078225546440744}
+  - component: {fileID: -4462131914876899522}
+  - component: {fileID: 5831841261449712412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -226,8 +228,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9150943, g: 0.15970986, b: 0.15970986, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fb5583e76e99fd44eb0a66a055deb16a, type: 3}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -328,6 +330,7 @@ MonoBehaviour:
   acceleration: 0
   deceleration: 0
   interpolateMovementSpeed: 0
+  isWalking: 0
 --- !u!114 &93856084065908376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +366,41 @@ MonoBehaviour:
   wallHeight: 1
   smashForce: 10
   cooldownTime: 2
+--- !u!95 &-4462131914876899522
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 741d2c94d78ae7846a8bdadfb9488231, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5831841261449712412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539cb9d7d6ec028429b3f12c5c057c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPermitted: 1
+  abilityName: 
 --- !u!1 &2522695266244020862
 GameObject:
   m_ObjectHideFlags: 0

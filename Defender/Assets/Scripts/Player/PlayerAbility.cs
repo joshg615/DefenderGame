@@ -21,6 +21,7 @@ public class PlayerAbility : MonoBehaviour
     protected float _verticalInput;
     protected float _horizontalInput;
     protected bool _abilityInitialized = false;
+    protected Animator _animator;
 
     // Determines if this ability is allowed to be used
     public virtual bool AbilityAllowed()
@@ -52,6 +53,7 @@ public class PlayerAbility : MonoBehaviour
         _controller = GetComponent<PlayerController>();
         _inputManager = _player.linkedInputManager;
         _abilityInitialized = true;
+        _animator = GetComponent<Animator>();
     }
 
     // Call this any time you want to force this ability to initialize (again)
