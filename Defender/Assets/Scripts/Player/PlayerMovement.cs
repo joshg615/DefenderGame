@@ -131,6 +131,7 @@ public class PlayerMovement : PlayerAbility
         }
         else
         {
+            
             // If input is zero, decrease speed
             if (_normalizedInput.magnitude == 0)
             {

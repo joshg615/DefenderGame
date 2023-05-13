@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     // the current added force, to be added to the character's movement
     public Vector3 addedForce;
 
+    // checking to see if moving 
+    public bool isWalking; 
+
+     
+
     protected Vector3 _positionLastFrame;
     protected Vector3 _impact;
     protected Vector3 _orientedMovement;
@@ -55,9 +60,20 @@ public class PlayerController : MonoBehaviour
 
         // Calculate a new movement vector based on the currentMovement vecotr and any additional force that may be applied
         Vector2 newMovement = _rigidBody.position + (Vector2)(currentMovement + addedForce) * Time.fixedDeltaTime;
+        
+        // Checking to see if current movement is greater than zero 
+        if(currentMovement.magnitude > 0)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false; 
+        }
 
         // Move to a new position based on the specified movement vector
         _rigidBody.MovePosition(newMovement);
+        
     }
 
     // Adds a force of the specified vector
@@ -108,7 +124,9 @@ public class PlayerController : MonoBehaviour
         if (currentMovement != Vector3.zero)
         {
             currentDirection = currentMovement.normalized;
+            
         }
+
     }
 
     // Calculates the current acceleration based on its current velocity and its velocity in the previous frame
