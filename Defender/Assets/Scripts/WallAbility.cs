@@ -28,22 +28,31 @@ public class WallAbility : PlayerAbility
             // Get the direction in which the player is facing
             Vector2 direction = _controller.currentDirection;
             GameObject wall;
+            
 
             // Apply a downward force to the player
             //_controller.SetVerticalForce(-smashForce);
 
             // Create a wall in the direction the player is facing
             Vector2 wallPosition =  new Vector2(transform.position.x + direction.x * 2, transform.position.y + direction.y * 2);
+            Vector2 hammerPosition = new Vector2(transform.position.x + direction.x, transform.position.y + direction.y);
+            Instantiate(Resources.Load("Hammer"), hammerPosition, Quaternion.identity); 
             if(direction.x > 0 || direction.x < 0)
             {
-                
-                wall =Instantiate(Resources.Load("Wall"), wallPosition, Quaternion.Euler(0, 0, 90)) as GameObject;
-                wall.transform.localScale = new Vector3(wallSize, wallHeight, 1f);
+                if (direction.x < 0)
+                {
+                    wall = Instantiate(Resources.Load("Wall"), wallPosition, Quaternion.Euler(0, 0, 90)) as GameObject;
+                }
+                else
+                {
+                    wall = Instantiate(Resources.Load("Wall"), wallPosition, Quaternion.Euler(0, 0, 270)) as GameObject;
+                }
+                //wall.transform.localScale = new Vector3(wallSize, wallHeight, 1f);
             }
             else
             {
                 wall = Instantiate(Resources.Load("Wall"), wallPosition, Quaternion.identity) as GameObject;
-                wall.transform.localScale = new Vector3(wallSize, wallHeight, 1f);
+                //wall.transform.localScale = new Vector3(wallSize, wallHeight, 1f);
             }
            
             // Set the last used time to the current time
