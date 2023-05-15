@@ -4,43 +4,34 @@ using UnityEngine;
 
 public class Magnetic : MonoBehaviour
 {
-    // the possible update modes
+    // Enum for different update modes
     public enum UpdateModes { Update, FixedUpdate, LateUpdate }
 
     [Header("Magnetic")]
-    // the layermask this magnetic element is attracted to
-    [Tooltip("the layermask this magnetic element is attracted to")]
-    public LayerMask TargetLayerMask;
-    // whether or not to start moving when something on the target layer mask enters this magnetic element's trigger
-    [Tooltip("whether or not to start moving when something on the target layer mask enters this magnetic element's trigger")]
-    public bool StartMagnetOnEnter = true;
-    // whether or not to stop moving when something on the target layer mask exits this magnetic element's trigger
-    [Tooltip("whether or not to stop moving when something on the target layer mask exits this magnetic element's trigger")]
-    public bool StopMagnetOnExit = false;
+    [Tooltip("The layer mask this magnetic element is attracted to")]
+    public LayerMask TargetLayerMask; // The layer mask that determines which objects can be attracted
+    [Tooltip("Whether or not to start moving when something on the target layer mask enters this magnetic element's trigger")]
+    public bool StartMagnetOnEnter = true; // Determines if the magnetic element starts moving when an object enters its trigger
+    [Tooltip("Whether or not to stop moving when something on the target layer mask exits this magnetic element's trigger")]
+    public bool StopMagnetOnExit = false; // Determines if the magnetic element stops moving when an object exits its trigger
 
     [Header("Position Interpolation")]
-    // whether or not we need to interpolate the movement
-    [Tooltip("whether or not we need to interpolate the movement")]
-    public bool InterpolatePosition = true;
-    // the speed at which to interpolate the follower's movement
-    [Tooltip("the speed at which to interpolate the follower's movement")]
-    public float FollowPositionSpeed = 5f;
-    // the acceleration to apply to the object once it starts following
-    [Tooltip("the acceleration to apply to the object once it starts following")]
-    public float FollowAcceleration = 0.75f;
+    [Tooltip("Whether or not to interpolate the movement")]
+    public bool InterpolatePosition = true; // Determines if the movement should be interpolated
+    [Tooltip("The speed at which to interpolate the follower's movement")]
+    public float FollowPositionSpeed = 5f; // The speed of interpolation for the movement
+    [Tooltip("The acceleration to apply to the object once it starts following")]
+    public float FollowAcceleration = 0.75f; // The acceleration applied to the object when it starts following
 
     [Header("Mode")]
-    // the update at which the movement happens
-    [Tooltip("the update at which the movement happens")]
-    public UpdateModes UpdateMode = UpdateModes.Update;
+    [Tooltip("The update at which the movement happens")]
+    public UpdateModes UpdateMode = UpdateModes.Update; // The update mode for the movement
 
     [Header("Debug")]
-    // the target to follow, read only, for debug only
-    [Tooltip("the target to follow, read only, for debug only")]
-    public Transform Target;
-    // whether or not the object is currently following its target's position
-    [Tooltip("whether or not the object is currently following its target's position")]
-    public bool FollowPosition = true;
+    [Tooltip("The target to follow, read only, for debug only")]
+    public Transform Target; // The target object being followed, for debugging purposes only
+    [Tooltip("Whether or not the object is currently following its target's position")]
+    public bool FollowPosition = true; // Determines if the object is currently following the target's position
 
     protected Collider2D _collider2D;
     protected Collider _collider;
@@ -56,6 +47,7 @@ public class Magnetic : MonoBehaviour
     {
         Initialization();
     }
+
     protected virtual void OnEnable()
     {
         Reset();
@@ -65,13 +57,20 @@ public class Magnetic : MonoBehaviour
     protected virtual void Initialization()
     {
         _collider2D = this.gameObject.GetComponent<Collider2D>();
-        if (_collider2D != null) { _collider2D.isTrigger = true; }
+        if (_collider2D != null)
+        {
+            _collider2D.isTrigger = true;
+        }
 
         _collider = this.gameObject.GetComponent<Collider>();
-        if (_collider != null) { _collider.isTrigger = true; }
+        if (_collider != null)
+        {
+            _collider.isTrigger = true;
+        }
 
         Reset();
     }
+
     protected virtual void Reset()
     {
         StopFollowing();
@@ -142,6 +141,7 @@ public class Magnetic : MonoBehaviour
         {
             return;
         }
+
         if (UpdateMode == UpdateModes.Update)
         {
             FollowTargetPosition();
