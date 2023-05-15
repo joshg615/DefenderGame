@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 23023919197238401}
   - component: {fileID: 5079793144334178586}
   - component: {fileID: 2806314526629087062}
-  - component: {fileID: 7553859219060799359}
   - component: {fileID: 399091111627493646}
+  - component: {fileID: 7553859219060799359}
+  - component: {fileID: 1816405829231302218}
   m_Layer: 0
   m_Name: Experience
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5079793144334178586
 SpriteRenderer:
@@ -99,29 +100,6 @@ SortingGroup:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &7553859219060799359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2394818464864192518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d01e13447130654449ff24b87aea944a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 72
-  StartMagnetOnEnter: 1
-  StopMagnetOnExit: 0
-  InterpolatePosition: 1
-  FollowPositionSpeed: 20
-  FollowAcceleration: 0.75
-  UpdateMode: 0
-  Target: {fileID: 0}
-  FollowPosition: 1
 --- !u!58 &399091111627493646
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -157,3 +135,39 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7553859219060799359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394818464864192518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01e13447130654449ff24b87aea944a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 72
+  StartMagnetOnEnter: 1
+  StopMagnetOnExit: 0
+  InterpolatePosition: 1
+  FollowPositionSpeed: 20
+  FollowAcceleration: 0.75
+  UpdateMode: 0
+  Target: {fileID: 0}
+  FollowPosition: 1
+--- !u!114 &1816405829231302218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394818464864192518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d530edacb1d51a44901d721cb2aabc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceToAdd: 1
