@@ -6921,3 +6921,37 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 90471.493184 seconds.
+  path: Assets/Sprites/oryx_16bit_fantasy_world_198.png
+  artifactKey: Guid(f1a70963ca4a52e459d35edfc2f70114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/oryx_16bit_fantasy_world_198.png using Guid(f1a70963ca4a52e459d35edfc2f70114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86800f2b449043dcb820a3a86cc70b24') in 0.139683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Sprites/Wall_2.png
+  artifactKey: Guid(e4fd7e01a0a872340a855af93fc00b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Wall_2.png using Guid(e4fd7e01a0a872340a855af93fc00b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1ec13794bbfa392214185bbed4f3bd') in 0.026046 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 43.528536 seconds.
+  path: Assets/Resources/Wall.prefab
+  artifactKey: Guid(3576f76a3f44a4140b7b4616c017cbec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Wall.prefab using Guid(3576f76a3f44a4140b7b4616c017cbec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70178c3369120d5060e113832dfb0aa3') in 0.079938 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 4.579460 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(3b9bbb9f774d5c84295f9b5b44a2b3e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(3b9bbb9f774d5c84295f9b5b44a2b3e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a8b28bf1d05dc61f5eba0abb248046e') in 0.286647 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49

@@ -5967,3 +5967,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 240022.634285 seconds.
+  path: Assets/Sprites/Wall_1.png
+  artifactKey: Guid(ca98c778681aeef448b3a535a861c001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Wall_1.png using Guid(ca98c778681aeef448b3a535a861c001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45c57443228011eaf901e0a23fd22030') in 0.142494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Sprites/Wall_3.png
+  artifactKey: Guid(a45df531dcd46fa468e7a502d85eb615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Wall_3.png using Guid(a45df531dcd46fa468e7a502d85eb615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09d45efbeaca068d34f2e934cb0d2bd4') in 0.029644 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
