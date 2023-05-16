@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 1970196794271656507}
   - component: {fileID: 4175467235358263880}
   - component: {fileID: 2574552833885766174}
+  - component: {fileID: 7153599516364345359}
   - component: {fileID: 93856084065908376}
   - component: {fileID: 8700078225546440744}
   - component: {fileID: 5831841261449712412}
@@ -368,6 +369,21 @@ MonoBehaviour:
   acceleration: 0
   deceleration: 0
   interpolateMovementSpeed: 0
+--- !u!114 &7153599516364345359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35520d3b7e3f3e349b5f3788aee596c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPermitted: 1
+  abilityName: Orientation
+  invertXAxis: 1
 --- !u!114 &93856084065908376
 MonoBehaviour:
   m_ObjectHideFlags: 0
