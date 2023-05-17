@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4175467235358263880, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
   m_PrefabInstance: {fileID: 5825699475180034447}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5825699475180034448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8328ac2695bb3a644a13cec87fe4e65c, type: 3}
@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1970196794271656507, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
   m_PrefabInstance: {fileID: 5825699475180034447}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5825699475180034448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78d6479d5f8b1140a9a9c9b0df73384, type: 3}
@@ -1605,7 +1605,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1683372192}
+  health: {fileID: 5825699475180034449}
+  showAddForce: 0
+  showDamage: 1
   forceVector: {x: 1000, y: 0, z: 0}
+  damageAmount: 10
 --- !u!4 &1748695954
 Transform:
   m_ObjectHideFlags: 0
@@ -1822,8 +1826,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1132766464846460661, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
+      insertIndex: 9
+      addedObject: {fileID: 5825699475180034449}
   m_SourcePrefab: {fileID: 100100000, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
+--- !u!1 &5825699475180034448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1132766464846460661, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
+  m_PrefabInstance: {fileID: 5825699475180034447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5825699475180034449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5825699475180034448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c1934f31c13b04aac268ed56ecd598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  initialHealth: 100
+  maximumHealth: 100
+  isInvulnerable: 0
+  destroyOnDeath: 1
 --- !u!1001 &6996262647207022299
 PrefabInstance:
   m_ObjectHideFlags: 0
