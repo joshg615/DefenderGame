@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class is used to add experience to the player when the player collides with this object
 public class ExperiencePickup : MonoBehaviour
 {
     // Amount of experience to add when picked up
