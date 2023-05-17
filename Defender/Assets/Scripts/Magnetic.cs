@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class will move an object towards a target
 public class Magnetic : MonoBehaviour
 {
     // Enum for different update modes
@@ -166,27 +167,33 @@ public class Magnetic : MonoBehaviour
         }
     }
 
-    // Follows the target, lerping the position or not based on what's been defined in the inspector
+    // Follows the target's position based on lerping or not based on what's been defined in the inspector
     protected virtual void FollowTargetPosition()
     {
+        // Returns if the target is null to avoid errors
         if (Target == null)
         {
             return;
         }
 
+        // Returns if FollowPosition is not true to avoid following the position
         if (!FollowPosition)
         {
             return;
         }
 
+        // Gets the new target position
         _newTargetPosition = Target.position;
 
+        // Computes the distance between the current position and the target's position.
         float trueDistance = 0f;
         _direction = (_newTargetPosition - this.transform.position).normalized;
         trueDistance = Vector3.Distance(this.transform.position, _newTargetPosition);
 
+        // Changes the speed of following based on the defined acceleration.
         _speed = (_speed < FollowPositionSpeed) ? _speed + FollowAcceleration * Time.deltaTime : FollowPositionSpeed;
 
+        // Lerps distance to interpolate creating a smoother motion vector.
         float interpolatedDistance = trueDistance;
         if (InterpolatePosition)
         {
