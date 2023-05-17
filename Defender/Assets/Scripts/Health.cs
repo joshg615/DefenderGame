@@ -17,8 +17,8 @@ public class Health : MonoBehaviour
     // Whether the character is invulnerable
     public bool isInvulnerable;
 
-    // Whether to destroy the character when health reaches zero
-    public bool destroyOnDeath;
+    // Whether to deactivate the character when health reaches zero
+    public bool deactivateOnDeath;
 
     // Returns true if this health component can be damaged this frame, and false otherwise
     public virtual bool CanTakeDamageThisFrame()
@@ -60,8 +60,8 @@ public class Health : MonoBehaviour
     // Kills the object
     public virtual void Kill()
     {
-        if (destroyOnDeath)
-        {
+        if (deactivateOnDeath)
+        {  
             gameObject.SetActive(false);
         }
     }
