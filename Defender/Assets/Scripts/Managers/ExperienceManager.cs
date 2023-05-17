@@ -58,8 +58,8 @@ public class ExperienceManager : MonoBehaviour
         // Calculate the excess experience beyond the required amount
         int excessExperience = experiencePoints - experienceRequiredForNextLevel;
 
-        // Reset the experience points to 0 and add the excess experience to the next level
-        experiencePoints = excessExperience;
+        // Reset the experience points to 0 if negative, then add the excess experience to the next level
+        experiencePoints = excessExperience < 0 ? 0 : excessExperience;
 
         // Calculate the new experience required for the next level, increasing it by 10%
         experienceRequiredForNextLevel = Mathf.RoundToInt(experienceRequiredForNextLevel * 1.1f);
