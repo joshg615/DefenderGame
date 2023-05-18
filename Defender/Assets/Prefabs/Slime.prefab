@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 8680411838901409005}
   - component: {fileID: 2887478168036757116}
   - component: {fileID: 2455707104787997278}
+  - component: {fileID: 7219946570301582868}
   - component: {fileID: 1061991838522330772}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8680411838901409005
 SpriteRenderer:
@@ -111,10 +112,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26dfd41408d9f942b0eb543b9d76825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
-  speed: 5
+  targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 1
   minDistance: 0.5
-  idleTime: 1
+  idleTime: 2
+--- !u!114 &7219946570301582868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253115784579975442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c1934f31c13b04aac268ed56ecd598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  initialHealth: 100
+  maximumHealth: 100
+  isInvulnerable: 0
+  deactivateOnDeath: 1
 --- !u!95 &1061991838522330772
 Animator:
   serializedVersion: 5
