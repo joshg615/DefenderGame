@@ -31,16 +31,6 @@ public class ExperienceManager : MonoBehaviour
         }
     }
 
-    // Increases the experience points by the given amount and checks for level up.
-    public void AddExperience(int experienceToAdd)
-    {
-        // Increase the experience points by the given amount
-        experiencePoints += experienceToAdd;
-
-        // Check if the player has leveled up
-        CheckForLevelUp();
-    }
-
     // Checks whether a player has reached the required amount of experience points to level up
     private void CheckForLevelUp()
     {

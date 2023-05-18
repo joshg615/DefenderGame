@@ -14,7 +14,7 @@ public class ExperiencePickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Add the specified amount of experience to the player's experience points
-            ExperienceManager.Instance.AddExperience(experienceToAdd);
+            ExperienceManager.Instance.AddExperiencePoints(experienceToAdd);
 
             // Destroy the experience pickup object
             Destroy(gameObject);
