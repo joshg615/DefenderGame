@@ -43,22 +43,46 @@ public class DefenderAbility : PlayerAbility
             _shieldCollider.enabled = true;
         }
 
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _shieldCollider.radius, repelLayerMask);
-        foreach (Collider2D hitCollider in hitColliders)
-        {
-            Rigidbody2D hitRigidbody = hitCollider.GetComponent<Rigidbody2D>();
+        StartCoroutine(RepelEnemies());
 
-            if (hitRigidbody != null)
-            {
-                Vector2 repelDirection = (hitRigidbody.transform.position - transform.position).normalized;
-                hitRigidbody.AddForce(repelDirection * repelForce);
-            }
-        }
+        //Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _shieldCollider.radius, repelLayerMask);
+        //foreach (Collider2D hitCollider in hitColliders)
+        //{
+        //    Rigidbody2D hitRigidbody = hitCollider.GetComponent<Rigidbody2D>();
+
+        //    if (hitRigidbody != null)
+        //    {
+        //        Vector2 repelDirection = (hitRigidbody.transform.position - transform.position).normalized;
+        //        hitRigidbody.AddForce(repelDirection * repelForce);
+        //    }
+        //}
 
         Invoke("ResetAbility", 3f);
 
     }
 
+    private IEnumerator RepelEnemies()
+    {
+        while (shieldObject.gameObject.activeInHierarchy)
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, _shieldCollider.radius, repelLayerMask);
+
+            foreach (Collider2D collider in colliders)
+            {
+                // Check if the collider belongs to an enemy
+                Rigidbody2D hitRigidbody = collider.GetComponent<Rigidbody2D>();
+                if (hitRigidbody != null)
+                {
+                    // Calculate the repel direction away from the player
+                    Vector2 repelDirection = (collider.transform.position - transform.position).normalized;
+                    // Apply the repel force to the enemy
+                    hitRigidbody.AddForce(repelDirection * repelForce);
+                }
+            }
+
+            yield return null;
+        }
+    }
     // override the ResetAbility method to turn off the shield object when the ability is reset
     public override void ResetAbility()
     {
