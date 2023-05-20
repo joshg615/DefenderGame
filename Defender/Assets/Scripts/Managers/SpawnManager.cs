@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     [System.Serializable]
     public class EnemySpawnInfo
     {
-        public Enemy enemyType; // The type of enemy to spawn
+        public GameObject enemyType; // The type of enemy to spawn
         public int enemyCount; // Number of enemies of this type to spawn in this wave
         public float enemyHealth; // Health of the enemy
     }
@@ -29,7 +29,6 @@ public class SpawnManager : MonoBehaviour
     public float waveInterval = 60.0f; // Interval between waves
 
     private int currentWave = 0; // Current wave
-    private float waveTimer = 0.0f; // Timer for wave spawning
     private float nextWaveTime = 0.0f; // Time until the next wave spawns
 
     private void Update()
@@ -74,7 +73,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnEnemy(EnemySpawnInfo enemyInfo)
     {
         // Get a pooled game object for the enemy from the object pooler
-        Enemy enemy = ObjectPooler.Instance.GetEnemy(enemyInfo.enemyType);
+        GameObject enemy = ObjectPooler.Instance.GetObject(enemyInfo.enemyType);
 
         // Get the Health component and set the health value
         Health health = enemy.GetComponent<Health>();
