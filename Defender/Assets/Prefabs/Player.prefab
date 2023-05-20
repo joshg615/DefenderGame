@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 8700078225546440744}
   - component: {fileID: 5831841261449712412}
   - component: {fileID: 363730022916904403}
+  - component: {fileID: 4696043236553869662}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -401,7 +402,7 @@ MonoBehaviour:
   initialHealth: 100
   maximumHealth: 100
   isInvulnerable: 0
-  destroyOnDeath: 1
+  deactivateOnDeath: 1
 --- !u!114 &93856084065908376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +473,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4696043236553869662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1270360fdd8dc9c4792da085ad069245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPermitted: 1
+  abilityName: melee
+  attackPrefab: {fileID: 5097953074500374037, guid: 4407e339638919843bc34a0a6b0c97fa, type: 3}
+  attackFrequency: 1
+  attackOffset: {x: -1.5, y: 0, z: 0}
 --- !u!1 &2522695266244020862
 GameObject:
   m_ObjectHideFlags: 0

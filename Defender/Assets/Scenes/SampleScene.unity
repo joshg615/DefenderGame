@@ -223,11 +223,6 @@ MonoBehaviour:
   colliderRenderType: 0
   gizmoColor: {r: 1, g: 0.015686274, b: 0.04430534, a: 1}
   gizmoSize: 0.25
---- !u!1 &575455091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1132766464846460661, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
-  m_PrefabInstance: {fileID: 5825699475180034447}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &702778835
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +880,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4175467235358263880, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
   m_PrefabInstance: {fileID: 5825699475180034447}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575455091}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8328ac2695bb3a644a13cec87fe4e65c, type: 3}
@@ -896,7 +891,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1970196794271656507, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
   m_PrefabInstance: {fileID: 5825699475180034447}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575455091}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78d6479d5f8b1140a9a9c9b0df73384, type: 3}
@@ -1319,6 +1314,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 93856084065908376, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
+      propertyPath: repelLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 1132766464846460661, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1367,46 +1366,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3253120571031130728, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
-      propertyPath: deactivateOnDeath
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1132766464846460661, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5825699475180034461}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
 --- !u!114 &5825699475180034449 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3253120571031130728, guid: 3b9bbb9f774d5c84295f9b5b44a2b3e3, type: 3}
   m_PrefabInstance: {fileID: 5825699475180034447}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575455091}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2c1934f31c13b04aac268ed56ecd598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5825699475180034461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575455091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1270360fdd8dc9c4792da085ad069245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityPermitted: 1
-  abilityName: melee
-  attackPrefab: {fileID: 5097953074500374037, guid: 4407e339638919843bc34a0a6b0c97fa, type: 3}
-  attackFrequency: 1
-  attackOffset: {x: -1.5, y: 0, z: 0}
 --- !u!114 &8970619421859492672 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7780930779325769606, guid: 9f8804a6081765e448012fbb0a565478, type: 3}

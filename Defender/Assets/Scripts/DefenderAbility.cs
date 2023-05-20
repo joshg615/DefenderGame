@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class DefenderAbility : PlayerAbility
 {
     public float repelForce = 500f; // force applied to repelled objects
     public float repelRadius = 5f; // radius of the repel effect
+    public LayerMask repelLayerMask; // layer mask for colliders to repel
     public GameObject shieldObject;
     private CircleCollider2D _shieldCollider; // the collider component of the shield object
 
@@ -43,7 +43,7 @@ public class DefenderAbility : PlayerAbility
             _shieldCollider.enabled = true;
         }
 
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _shieldCollider.radius);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, _shieldCollider.radius, repelLayerMask);
         foreach (Collider2D hitCollider in hitColliders)
         {
             Rigidbody2D hitRigidbody = hitCollider.GetComponent<Rigidbody2D>();
