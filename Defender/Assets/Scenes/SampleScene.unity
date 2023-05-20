@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - enemyType: {fileID: 7322520605816345259, guid: 856ebbcf77491db4cb033cee3b6d321f, type: 3}
+    - enemyType: {fileID: 7065402590177747402, guid: 856ebbcf77491db4cb033cee3b6d321f, type: 3}
       enemyCount: 60
       enemyHealth: 10
     spawnInterval: 1
@@ -1102,8 +1102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410ae035e0c2fff46a0306e38bd18564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabTypes:
-  - {fileID: 7322520605816345259, guid: 856ebbcf77491db4cb033cee3b6d321f, type: 3}
+  enemyPrefabs:
+  - {fileID: 7065402590177747402, guid: 856ebbcf77491db4cb033cee3b6d321f, type: 3}
   poolSizePerType: 100
 --- !u!1 &2113974166
 GameObject:

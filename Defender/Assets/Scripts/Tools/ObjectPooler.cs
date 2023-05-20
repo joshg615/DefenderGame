@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,10 +5,10 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler Instance;
-    public List<GameObject> prefabTypes; // List of prefab types to be pooled
-    public int poolSizePerType = 100; // Number of instances to create per prefab type
+    public List<Enemy> enemyPrefabs; // List of enemy prefabs to be pooled
+    public int poolSizePerType = 100; // Number of instances to create per enemy type
 
-    private Dictionary<Type, Queue<GameObject>> objectPool; // Dictionary to store pooled objects
+    private Dictionary<Enemy, List<Enemy>> enemyPool; // Dictionary to store pooled enemies
 
     void Awake()
     {
@@ -23,43 +22,46 @@ public class ObjectPooler : MonoBehaviour
             return;
         }
 
-        objectPool = new Dictionary<Type, Queue<GameObject>>();
+        enemyPool = new Dictionary<Enemy, List<Enemy>>();
 
-        // Create and populate the object pool for each prefab type
-        foreach (GameObject prefabType in prefabTypes)
+        // Create and populate the object pool for each enemy type
+        foreach (Enemy enemyPrefab in enemyPrefabs)
         {
-            objectPool[prefabType.GetType()] = new Queue<GameObject>();
+            enemyPool[enemyPrefab] = new List<Enemy>();
 
-            // Instantiate and initialize the specified number of instances
+            // Instantiate and initialize the specified number of enemy instances
             for (int i = 0; i < poolSizePerType; i++)
             {
-                GameObject newObject = Instantiate(prefabType, transform);
-                newObject.SetActive(false);
-                objectPool[prefabType.GetType()].Enqueue(newObject);
+                Enemy newEnemy = Instantiate(enemyPrefab, transform);
+                newEnemy.Initialize();
+                newEnemy.Deactivate();
+                enemyPool[enemyPrefab].Add(newEnemy);
             }
         }
     }
 
-    public GameObject GetObject(GameObject prefabType)
+    public Enemy GetEnemy(Enemy enemyType)
     {
-        // Check if there is an inactive object of the specified type
-        if (objectPool[prefabType.GetType()].Count > 0)
+        // Retrieve an inactive enemy from the pool of the specified enemy type
+        foreach (Enemy enemy in enemyPool[enemyType])
         {
-            GameObject retrievedObject = objectPool[prefabType.GetType()].Dequeue();
-            retrievedObject.SetActive(true);
-            return retrievedObject;
+            if (!enemy.gameObject.activeInHierarchy)
+            {
+                enemy.Activate();
+                return enemy;
+            }
         }
 
-        // If no inactive object of this type is found, expand the pool by creating a new instance
-        GameObject newObject = Instantiate(prefabType, transform);
-        objectPool[prefabType.GetType()].Enqueue(newObject);
-        return newObject;
+        // If no inactive enemy of this type is found, expand the pool by creating a new instance
+        Enemy newEnemy = Instantiate(enemyType, transform);
+        newEnemy.Initialize();
+        enemyPool[enemyType].Add(newEnemy);
+        return newEnemy;
     }
 
-    public void ReturnObject(GameObject objectToReturn)
+    public void ReturnEnemy(Enemy enemy)
     {
-        // Deactivate and return the object to the pool
-        objectToReturn.SetActive(false);
-        objectPool[objectToReturn.GetType()].Enqueue(objectToReturn);
+        // Deactivate and return the enemy to the pool
+        enemy.Deactivate();
     }
 }
