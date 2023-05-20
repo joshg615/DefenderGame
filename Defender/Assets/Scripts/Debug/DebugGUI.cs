@@ -8,11 +8,14 @@ public class DebugGUI : MonoBehaviour
 {
     // Public fields to specify the components to test
     public PlayerController playerController;
-    public Health health;
+    public Health playerHealth;
+    public Health slimeHealth;
 
     // Flags to control which buttons are displayed
     public bool showAddForce = true;
     public bool showDamage = true;
+    public bool showPlayerInvulnerability = true;
+    public bool showSlimeInvulnerability = true;
 
     // The vector3 force to apply when the Add Force button is pressed
     public Vector3 forceVector = new Vector3(1f, 0f, 0f);
@@ -25,6 +28,8 @@ public class DebugGUI : MonoBehaviour
     // Private variables to track the state of the player and buttons
     private bool prevShowAddForce;
     private bool prevShowDamage;
+    private bool prevShowPlayerInvulnerability;
+    private bool prevShowSlimeInvulnerability;
 
     // Method called once after component's initialization
     private void Awake()
@@ -36,7 +41,7 @@ public class DebugGUI : MonoBehaviour
     private void Update()
     {
         //Condition to identify changes in the flags
-        if (showAddForce != prevShowAddForce || showDamage != prevShowDamage)
+        if (showAddForce != prevShowAddForce || showDamage != prevShowDamage || showPlayerInvulnerability != prevShowPlayerInvulnerability || showSlimeInvulnerability != prevShowSlimeInvulnerability)
         {
             BuildButtonActions();
         }
@@ -59,9 +64,21 @@ public class DebugGUI : MonoBehaviour
             buttonActions.Add("Deal Damage", DealDamage);
         }
 
+        if (showPlayerInvulnerability)
+        {
+            buttonActions.Add("Toggle player invulnerability", TogglePlayerInvulnerability);
+        }
+
+        if (showSlimeInvulnerability)
+        {
+            buttonActions.Add("Toggle slime invulnerability", ToggleSlimeInvulnerability);
+        }
+
         // Update the previous values
         prevShowAddForce = showAddForce;
         prevShowDamage = showDamage;
+        prevShowPlayerInvulnerability = showPlayerInvulnerability;
+        prevShowSlimeInvulnerability = showSlimeInvulnerability;
     }
 
     // Method for rendering button actions on the screen
@@ -89,6 +106,18 @@ public class DebugGUI : MonoBehaviour
     // Method to apply DealDamage action using Health component
     private void DealDamage()
     {
-        health.Damage(damageAmount);
+        playerHealth.Damage(damageAmount);
+    }
+
+    // Method to toggle player invulnerability
+    private void TogglePlayerInvulnerability()
+    {
+        playerHealth.isInvulnerable = !playerHealth.isInvulnerable;
+    }
+
+    // Method to toggle slime invulnerability
+    private void ToggleSlimeInvulnerability()
+    {
+        slimeHealth.isInvulnerable = !slimeHealth.isInvulnerable;
     }
 }
