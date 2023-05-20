@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     [System.Serializable]
     public class EnemySpawnInfo
     {
-        public Enemy enemyType; // The type of enemy to spawn
+        public GameObject enemyType; // The type of enemy to spawn
         public int enemyCount; // Number of enemies of this type to spawn in this wave
         public float enemyHealth; // Health of the enemy
     }
@@ -29,7 +29,6 @@ public class SpawnManager : MonoBehaviour
     public float waveInterval = 60.0f; // Interval between waves
 
     private int currentWave = 0; // Current wave
-    private float waveTimer = 0.0f; // Timer for wave spawning
     private float nextWaveTime = 0.0f; // Time until the next wave spawns
 
     private void Update()
@@ -74,10 +73,10 @@ public class SpawnManager : MonoBehaviour
     private void SpawnEnemy(EnemySpawnInfo enemyInfo)
     {
         // Get a pooled game object for the enemy from the object pooler
-        Enemy enemy = ObjectPooler.Instance.GetEnemy(enemyInfo.enemyType);
+        GameObject enemyObject = ObjectPooler.Instance.GetObject(enemyInfo.enemyType);
 
         // Get the Health component and set the health value
-        Health health = enemy.GetComponent<Health>();
+        Health health = enemyObject.GetComponent<Health>();
         if (health != null)
         {
             health.SetHealth(enemyInfo.enemyHealth);
@@ -87,8 +86,8 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPosition = GetRandomPositionOutsideCameraView();
 
         // Set the enemy's position and rotation
-        enemy.transform.position = spawnPosition;
-        enemy.transform.rotation = Quaternion.identity;
+        enemyObject.transform.position = spawnPosition;
+        enemyObject.transform.rotation = Quaternion.identity;
     }
 
     private Vector3 GetRandomPositionOutsideCameraView()
@@ -104,7 +103,7 @@ public class SpawnManager : MonoBehaviour
 
             // Convert viewport position to world position
             spawnPosition = Camera.main.ViewportToWorldPoint(viewportPosition);
-            spawnPosition.z = 0f; // Assuming your game is 2D, adjust the z position accordingly if it's a 3D game
+            spawnPosition.z = 0f;
 
             // Add an offset to the position to move it outside the screen bounds
             Vector3 offset = spawnPosition - Camera.main.transform.position;
