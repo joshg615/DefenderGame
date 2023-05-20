@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 5831841261449712412}
   - component: {fileID: 363730022916904403}
   - component: {fileID: 4696043236553869662}
+  - component: {fileID: 1103178464223285499}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -189,8 +190,9 @@ Transform:
   m_Children:
   - {fileID: 7438304496613238676}
   - {fileID: 4574278723623585222}
+  - {fileID: 6071659801173044434}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &992133716802291945
 SpriteRenderer:
@@ -493,6 +495,24 @@ MonoBehaviour:
   attackPrefab: {fileID: 1594387941191813042, guid: d1927662fe092984b9811e7cffd094c2, type: 3}
   attackFrequency: 1
   attackOffset: {x: -1.5, y: 0, z: 0}
+--- !u!114 &1103178464223285499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132766464846460661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925184737177efa448b240c4b35ad2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPermitted: 1
+  abilityName: 
+  hammerPrefab: {fileID: 6202707215330132413, guid: 4c014459e3133fa4e8fb3c9d2d9518a5, type: 3}
+  hammerSpawnPoint: {fileID: 6071659801173044434}
+  throwForce: 10
+  throwDelay: 0.5
 --- !u!1 &2522695266244020862
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +927,37 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!1 &4661568866795670617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6071659801173044434}
+  m_Layer: 0
+  m_Name: HammerThrowSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6071659801173044434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661568866795670617}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 0.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1957167461149040760}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6631990167490907344
 GameObject:
   m_ObjectHideFlags: 0
