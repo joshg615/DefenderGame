@@ -59,4 +59,19 @@ public class PlayerOrientation : PlayerAbility
             }
         }
     }
+
+    // Public function to get the facing direction of the sprite
+    public int GetFacingDirection()
+    {
+        if (_spriteRenderer.flipX)
+        {
+            // Sprite is facing left
+            return -1;
+        }
+        else
+        {
+            // Sprite is facing right
+            return 1;
+        }
+    }
 }

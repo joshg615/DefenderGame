@@ -17,6 +17,7 @@ public class PlayerAbility : MonoBehaviour
 
     protected Player _player;
     protected PlayerController _controller;
+    protected PlayerOrientation _orientation;
     protected InputManager _inputManager;
     protected float _verticalInput;
     protected float _horizontalInput;
@@ -51,6 +52,7 @@ public class PlayerAbility : MonoBehaviour
     protected virtual void Initialize()
     {
         _controller = GetComponent<PlayerController>();
+        _orientation = GetComponent<PlayerOrientation>();
         _inputManager = _player.linkedInputManager;
         _abilityInitialized = true;
         _animator = GetComponent<Animator>();
