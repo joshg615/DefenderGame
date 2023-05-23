@@ -13,9 +13,13 @@ public class Enemy : MonoBehaviour
     private static GameObject slime;
     private Collider2D myCollider; // Collider component of the enemy
 
+    public float slowDownFactor = .3f;
+    public Rigidbody2D rb;
+
     void Awake()
     {
         myCollider = GetComponent<Collider2D>(); // Get the Collider component on Awake
+        rb= GetComponent<Rigidbody2D>();
         Initialize();
     }
 
@@ -58,6 +62,11 @@ public class Enemy : MonoBehaviour
                 Vector3 escapeDir = (transform.position - hitCollider.transform.position).normalized;
                 transform.position += escapeDir * Time.deltaTime;
             }
+        }
+
+        if (rb.velocity.magnitude > 0)
+        {
+            rb.velocity *= slowDownFactor; 
         }
     }
 }
